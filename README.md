@@ -5,7 +5,7 @@
 ## TABLE OF CONTENTS
 
 1. [Traktor Private Frame Info](#privateFrameInfo )
-2. [Reading the Traktor Frame](#readFrame)
+2. [Reading the Traktor Frame](#readFrame )
 3. [EXIF Tool](#exifTool)
 4. [Script Modification](#scriptMod)
 5. [Requirements](#require)
@@ -13,7 +13,6 @@
 7. [Running](#running)
 8. [Road Map](#roadMap)
 9. [Contribute](#contribute)
-10. 
 
 <h2 id="privateFrameInfo">Traktor Private Frame Info</h2>
 
@@ -27,8 +26,6 @@ His code is based on the work that was done with this Perl Script info Here:
 My code is based on the above Script: *getTraktorFrame.pl* which is no longer available on that site, but I've included it in the Original Scripts Folder named: *getTraktorFrameOrig.pl*
 
 The *getTraktorFrame.pl* Script was getting the NITR Frame which is the older name that Traktor used. But was only able to get the Private NITR Frame from mp3 files using mp3Tag.
-
-
 
 <h2 id="readFrame">READING THE TRAKTOR FRAME</h2>
 
