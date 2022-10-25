@@ -14,8 +14,9 @@
 8. [Road Map](#roadMap)
 9. [Contribute](#contribute)
 
-Traktor Private Frame Info
---------------------------
+
+
+<h2 id="privFrameInfo"\> Traktor Private Frame Info</h2\>
 
 Traktor stores it's own Metadata in a Private Frame.
  On mp3 Files this is stored in the TRAKTOR4 Private Frame.
