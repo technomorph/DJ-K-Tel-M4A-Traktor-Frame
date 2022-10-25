@@ -91,6 +91,7 @@ INSTALLATION
 ------------
 
 * Copy or Move the Whole Folder to anywhere
+* Download Release from here: <https://github.com/technomorph/DJ-K-Tel-M4A-Traktor-Frame/releases>
 * Move the **DJ K-Tel M4A TraktorFrame Parser** to applications folder (optional)
 
 <h2 id="running">RUNNING</h2>
