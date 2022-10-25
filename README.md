@@ -4,7 +4,7 @@
 
 ## TABLE OF CONTENTS
 
-1. [Traktor Private Frame Info](#privFrameInfo )
+1. [Traktor Private Frame Info](#privFrameInfo)
 2. [Reading the Traktor Frame](#readFrame)
 3. [EXIF Tool](#exifTool)
 4. [Script Modification](#scriptMod)
@@ -14,9 +14,7 @@
 8. [Road Map](#roadMap)
 9. [Contribute](#contribute)
 
-
-
-<h2 id="privFrameInfo"\> Traktor Private Frame Info</h2\>
+<h2 id="privFrameInfo">Traktor Private Frame Info</h2>
 
 Traktor stores it's own Metadata in a Private Frame.
  On mp3 Files this is stored in the TRAKTOR4 Private Frame.
