@@ -31,7 +31,7 @@
 <p><strong>Decoding the Traktor Private NITR Frame on M4A Files</strong></p>
 <h2>TABLE OF CONTENTS</h2>
 <ol>
-<li><a href="#privFrameInfo">Traktor Private Frame Info</a></li>
+<li><a href="#privateFrameInfo">Traktor Private Frame Info</a></li>
 <li><a href="#readFrame">Reading the Traktor Frame</a></li>
 <li><a href="#exifTool">EXIF Tool</a></li>
 <li><a href="#scriptMod">Script Modification</a></li>
@@ -41,7 +41,7 @@
 <li><a href="#roadMap">Road Map</a></li>
 <li><a href="#contribute">Contribute</a></li>
 </ol>
-</div><div class="cell text-cell"><h2 id="privFrameInfo">Traktor Private Frame Info</h2>
+</div><div class="cell markdown-cell"><h2 id="privateFrameInfo">Traktor Private Frame Info</h2></div><div class="cell text-cell"><h2 id="privFrameInfo"><span style="font-size: 13px;"></span></h2>
 <p>Traktor stores it's own Metadata in a Private Frame.<br>
 On mp3 Files this is stored in the <font style="font-size: 14px;" color="#ffd100">TRAKTOR4</font> Private Frame.<br>
 You can get this information via a web decoder from Hellricer Here: <a href="https://hellricer.github.io/2021/05/05/decoding-traktor4-field.html">https://hellricer.github.io/2021/05/05/decoding-traktor4-field.html</a></p>
@@ -49,7 +49,7 @@ You can get this information via a web decoder from Hellricer Here: <a href="htt
 <a href="https://web.archive.org/web/20130525033615/http://dope.cz/code">https://web.archive.org/web/20130525033615/http://dope.cz/code</a></p>
 <p>My code is based on the above Script: <i><font color="#00ffdc">getTraktorFrame.pl</font></i> which is no longer available on that site, but I've included it in the Original Scripts Folder named: <i><font color="#00ffec">getTraktorFrameOrig.pl</font></i></p>
 <p>The <i><font color="#00fff6">getTraktorFrame.pl</font></i> Script was getting the <span style="font-size: 16px;"><font color="#ffd100">NITR</font></span> Frame which is the older name that Traktor used. But was only able to get the Private&nbsp;<span style="caret-color: rgb(255, 209, 0); font-size: 16px;"><font color="#ffed00">NITR</font></span>&nbsp;Frame from mp3 files using <font color="#00daff">mp3Tag</font>.</p>
-</div><div class="cell text-cell"><h2 id="readFrame">READING THE TRAKTOR FRAME</h2>
+</div><div class="cell markdown-cell"><h2 id="readFrame">READING THE TRAKTOR FRAME</h2></div><div class="cell text-cell"><h2 id="readFrame"></h2>
 I have been exploring with all of the Tag Readers/Writers that I can.
  My choice has been <font color="#01e3ff">Kid3</font> as i found 
  <font color="#01e5ff">Music Brains </font>just adding a bunch of junk I didn't need.
@@ -58,7 +58,7 @@ I have been exploring with all of the Tag Readers/Writers that I can.
  I'll soon upload some of my custom scripts.
 <p>I noticed that <font color="#00e3ff">Kid3</font> (with the right settings) was recognizing the&nbsp;<span style="font-size: 15px;"><font color="#fff100">TRAKTOR4</font></span>&nbsp;Private frame on mp3 files. But my current workflow is using straight M4A files at 512kbs / 96kHz converted from FLAC 24Bit/44.1-192kHz Files.<br>
 I was still not able to find any<span style="font-size: 14px;">&nbsp;<font color="#ffc400">TRAKTOR4</font></span>&nbsp;or&nbsp;<span style="caret-color: rgb(255, 209, 0); font-size: 16px;"><font color="#ffdd00">NITR</font></span>&nbsp;frames on M4A files via any programs until I tried out <font color="#0be8ff">EXIF Tool</font>.</p>
-</div><div class="cell text-cell"><h2 id="exifTool">EXIF Tool</h2>
+</div><div class="cell text-cell"><h2 id="exifTool"></h2></div><div class="cell markdown-cell"><h2 id="exifTool">EXIF Tool</h2></div><div class="cell text-cell"><h2 id="exifTool"></h2>
 <p>Running <font color="#02f8ff">EXIF Tool </font>forcing it so scan all frames and include unknown frames, revealed the <span style="font-size: 14px;"><font color="#ffea00">Unknown_NITR</font></span></p>
 </div><div class="cell code-cell"><div class="ace-monokai"><div class="ace_static_highlight ace_show_gutter" style="counter-reset:ace_line 0"><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_identifier">exiftool</span> <span class="ace_keyword ace_operator">-</span><span class="ace_identifier">all</span> <span class="ace_keyword ace_operator">-</span><span class="ace_identifier">a</span> <span class="ace_keyword ace_operator">-</span><span class="ace_identifier">u</span> <span class="ace_keyword ace_operator">-</span><span class="ace_identifier">U</span> <span class="ace_keyword ace_operator">-</span><span class="ace_identifier">f</span> <span class="ace_keyword ace_operator">-</span><span class="ace_identifier">s</span> <span class="ace_string">"$PATH TO FILE IN QUOTES"</span> <span class="ace_identifier">OR</span> <span class="ace_identifier">ESCAPED</span>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_keyword ace_operator">...</span><span class="ace_identifier">TRIMMED</span> <span class="ace_identifier">DATA</span><span class="ace_keyword ace_operator">.....</span>
@@ -81,15 +81,14 @@ I was still not able to find any<span style="font-size: 14px;">&nbsp;<font color
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>ޣ<span class="ace_keyword ace_operator">=</span>;<span class="ace_identifier">r</span><span class="ace_keyword ace_operator">!</span><span class="ace_identifier">B</span>?)@?<span class="ace_identifier">o</span>?<span class="ace_keyword ace_operator">&gt;</span>??<span class="ace_identifier">B</span>?<span class="ace_identifier">t</span>@?<span class="ace_identifier">sL</span>? @    ?<span class="ace_constant ace_numeric">6</span>???<span class="ace_identifier">C</span>`?<span class="ace_constant ace_numeric">3</span>@?<span class="ace_keyword ace_operator">|</span>(??<span class="ace_constant ace_numeric">8</span>@<span class="ace_identifier">W</span>??<span class="ace_keyword ace_operator">=</span>?<span class="ace_constant ace_numeric">3</span>?<span class="ace_identifier">B</span>?<span class="ace_keyword ace_operator">&lt;*</span>@???<span class="ace_keyword ace_operator">&gt;</span>??<span class="ace_identifier">C</span>? @<span class="ace_identifier">R</span>?<span class="ace_keyword ace_operator">%</span>???<span class="ace_identifier">I</span><span class="ace_keyword ace_operator">=</span>???<span class="ace_identifier">B</span><span class="ace_keyword ace_operator">,</span><span class="ace_string">'@???&gt;ͼ?B p ??K?@y'</span>@
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span> ޠ<span class="ace_keyword ace_operator">=</span>?<span class="ace_identifier">W</span>?<span class="ace_identifier">B</span>`Չ <span class="ace_identifier">W</span>???<span class="ace_identifier">C</span>@<span class="ace_keyword ace_operator">!</span>@<span class="ace_identifier">l</span><span class="ace_keyword ace_operator">%</span>?<span class="ace_keyword ace_operator">&lt;</span>?[<span class="ace_identifier">B</span>?<span class="ace_constant ace_numeric">5</span>?<span class="ace_keyword ace_operator">!</span>@?<span class="ace_keyword ace_operator">+</span>? <span class="ace_identifier">S</span><span class="ace_string">"@?&gt;=@BCB?׃"</span>@?<span class="ace_identifier">g</span>??<span class="ace_keyword ace_operator">-</span>(<span class="ace_identifier">C</span>`??<span class="ace_comment">#@???Ć$@Л</span>
 </div><div class="ace_line"><span class="ace_gutter ace_gutter-cell" unselectable="on"></span>?<span class="ace_identifier">t</span>? <span class="ace_identifier">C</span> ??$@<span class="ace_identifier">y</span><span class="ace_keyword ace_operator">&gt;?:</span>`?<span class="ace_keyword ace_operator">%</span>@??(?`?<span class="ace_keyword ace_operator">=</span><span class="ace_identifier">v</span><span class="ace_keyword ace_operator">&amp;</span>?<span class="ace_keyword ace_operator">&gt;</span>??<span class="ace_identifier">C</span>?<span class="ace_identifier">Q</span><span class="ace_keyword ace_operator">|&amp;</span>@<span class="ace_identifier">U</span>??֧   <span class="ace_identifier">C</span>?5<span class="ace_identifier">x</span><span class="ace_string">'@0?=?E?'</span>@?ږ<span class="ace_keyword ace_operator">=</span>}??<span class="ace_identifier">B</span>?<span class="ace_identifier">t</span>(@??@?<span class="ace_identifier">C</span>?<span class="ace_identifier">h</span>?(@??;? <span class="ace_keyword ace_operator">******************</span><span class="ace_identifier">TRIMMED</span> <span class="ace_identifier">TO</span> <span class="ace_support ace_function">END</span> <span class="ace_identifier">FROM</span> <span class="ace_identifier">HERE</span> <span class="ace_keyword ace_operator">-</span> <span class="ace_identifier">UNKNOWN</span> <span class="ace_identifier">DATA</span> (<span class="ace_identifier">TRANSIENTS</span>?) <span class="ace_keyword ace_operator">***************</span>
-</div></div></div></div><div class="cell text-cell"><h2 id="scriptMod">MODIFY SCRIPT</h2>
-<p>I then modified the orignal Perl Script to get the data via <font color="#05fff8">EXIF Tool</font> rather than <font color="#00ffef">mp3Tag</font> and then process the data.  I had to make a few small other adjustments.</p>
+</div></div></div></div><div class="cell markdown-cell"><h2 id="scriptMod">MODIFY SCRIPT</h2></div><div class="cell text-cell"><div>I then modified the orignal Perl Script to get the data via <font color="#05fff8">EXIF Tool</font> rather than <font color="#00ffef">mp3Tag</font> and then process the data.  I had to make a few small other adjustments.</div>
 </div><div class="cell markdown-cell"><h2>PACKAGE SCRIPT</h2>
 <p>I then packaged the Perl Script into a Mac App using<br>
 <strong>Platypus</strong> <a href="https://sveinbjorn.org/platypus">https://sveinbjorn.org/platypus</a></p>
 </div><div class="cell markdown-cell"><h2 id="require">REQUIREMENTS</h2>
 <ul>
 <li>Mac OSX 10.11 or Later</li>
-<li>Traktor m4a files (Test files included)</li>
+<li>Traktor Files (Test files included)</li>
 <li>EXIF Tool
 <ul>
 <li>INSTALL FROM HERE : <a href="https://exiftool.org">https://exiftool.org</a></li>
@@ -98,9 +97,9 @@ I was still not able to find any<span style="font-size: 14px;">&nbsp;<font color
 </ul>
 </li>
 </ul>
-</div><div class="cell text-cell"><h2 id="install">INSTALLATION</h2>
+</div><div class="cell text-cell"><h2 id="install"></h2></div><div class="cell markdown-cell"><h2 id="install">INSTALLATION</h2></div><div class="cell text-cell"><h2 id="install"></h2>
 <ul>
-<li>Copy or Move the Whole Folder to anywhere</li>
+<li>Copy or Move the Whole Folder to anywhere</li><li>Download Release from here:&nbsp;<a href="https://github.com/technomorph/DJ-K-Tel-M4A-Traktor-Frame/releases">https://github.com/technomorph/DJ-K-Tel-M4A-Traktor-Frame/releases</a></li>
 <li>Move the <strong style="font-size: 14px;"><font color="#fffe00">DJ K-Tel M4A TraktorFrame Parser</font></strong> to applications folder (optional)</li>
 </ul>
 </div><div class="cell markdown-cell"><h2 id="running">RUNNING</h2>
