@@ -1,0 +1,56 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fswiss\fcharset204 Helvetica;\f1\fnil\fcharset0 AndaleMono;}
+{\colortbl;\red255\green255\blue255;\red47\green255\blue18;\red0\green0\blue0;\red250\green0\blue15;
+\red2\green0\blue249;}
+{\*\expandedcolortbl;;\cssrgb\c15686\c99608\c7843;\csgray\c0\c90000;\cssrgb\c99608\c0\c5700;
+\csgenericrgb\c751\c0\c97741;}
+\margl1440\margr1440\vieww16660\viewh13000\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 INSTRUCTIONS:\
+\
+- Install and Test EXIF TOOL (follow instructions in 
+\b EXIF Tool install and Test
+\b0  file)\
+- Move the DJ K-Tel M4A Traktor Frame to your Applications Folder Somewhere\
+- Launch the App\
+- It Will Ask You to Select a File (only M4A - See Test Songs Folder)\
+- If finds the UNKNOWN_NITR FRAME it will parse the data and show the output\
+- the Output can be saved as a Text File: (See 
+\b DJ K-Tel M4A TraktorFrame Parser-Output.rtf
+\b0 \
+\
+DETAILS:\
+\
+- Via EXIF Tool I was able to discover the NITR Frame which no other tagging software has shown\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1 \cf2 \cb3 \CocoaLigature0 Composer                        : FLAC 24bit/176.4khz\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf4 \cb3 Unknown_NITR                    : (Binary data 79459 bytes, use -b option to extract)\cf2 \cb3 \
+ContentCreateDate               : 1977\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \cb1 \CocoaLigature1 - Via EXIF Tool I was able get the raw the NITR Frame binary data\
+- By modifying the \cf5 getTraktorFrame.pl\cf0  from {\field{\*\fldinst{HYPERLINK "https://web.archive.org/web/20130525033615/http://dope.cz/code"}}{\fldrslt https://web.archive.org/web/20130525033615/http://dope.cz/code}} \
+(This file is no longer available on the site but I grabbed it years ago and original is in Original Scripts Folder and named \cf5 getTraktorFrameOrig.pl\
+\cf0 - My modified version is called \cf5 getTraktorM4AFrame.pl\
+\cf0 - Quick info on mods \
+	- Use EXIF Tool to get the RAW BINARY of the NITR Frame\
+	- Slight adjustments within the parsing\
+- Package the script into an Mac App using 
+\b Platypus {\field{\*\fldinst{HYPERLINK "https://sveinbjorn.org/platypus"}}{\fldrslt 
+\b0 https://sveinbjorn.org/platypus}}
+\b0 \
+\
+FUTURE:\
+- Be able to also parse the TRAKTOR4 frame\
+- Be able to generate a JSON Dict of the DATA \
+(Does anyone know how to create dictionaries / JSON in Perl????)\
+- Change the parser from Perl to Objective-C (My main programming language)\
+- Try to be able to modify and resave the frame back to the file.  \
+	- I know the CHKS is an important part. \
+	- in the example file Shown data is 79459 bytes\
+72260\
+	- and the parsed CHKS is 
+\fs28 0xbecfd300}

@@ -1,0 +1,199 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fswiss\fcharset204 Helvetica;\f1\fnil\fcharset0 AndaleMono;\f2\fnil\fcharset204 Monaco;
+\f3\fnil\fcharset204 LucidaGrande;\f4\fnil\fcharset0 NotoSansThaana;\f5\fnil\fcharset0 HelveticaNeue;
+\f6\fnil\fcharset77 Mshtakan;\f7\fmodern\fcharset0 CourierNewPSMT;\f8\fnil\fcharset0 Menlo-Bold;
+\f9\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red47\green255\blue18;\red0\green0\blue0;\red34\green255\blue244;
+\red255\green255\blue255;\red15\green0\blue253;\red2\green0\blue249;\red255\green255\blue10;\red0\green0\blue0;
+\red250\green0\blue15;\red0\green0\blue0;\red243\green243\blue243;\red249\green12\blue9;\red252\green250\blue10;
+\red255\green255\blue11;\red251\green0\blue205;\red0\green0\blue0;\red255\green255\blue255;\red255\green249\blue10;
+}
+{\*\expandedcolortbl;;\cssrgb\c15686\c99608\c7843;\csgray\c0\c90000;\cssrgb\c2939\c99501\c96647;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c8672\c0\c99608;\csgenericrgb\c751\c0\c97741;\cssrgb\c99942\c98555\c0;\csgray\c0\c65141;
+\cssrgb\c99608\c0\c5700;\cssrgb\c0\c0\c0;\cssrgb\c96114\c96114\c96114\c22183;\csgenericrgb\c97741\c4765\c3612;\csgenericrgb\c98628\c98034\c4036;
+\cssrgb\c100000\c100000\c0;\csgenericrgb\c98528\c0\c80340;\csgenericrgb\c0\c0\c0;\csgenericrgb\c100000\c100000\c100000;\csgenericrgb\c100000\c97703\c4062;
+}
+\margl1440\margr1440\vieww16660\viewh13480\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 EXIF TOOL install and Testing \
+\
+INSTALL FROM HERE : {\field{\*\fldinst{HYPERLINK "https://exiftool.org"}}{\fldrslt https://exiftool.org}}\
+Or direct Mac Download Here: {\field{\*\fldinst{HYPERLINK "https://exiftool.org/ExifTool-12.49.dmg"}}{\fldrslt ExifTool-12.49.dmg}}\
+\
+\
+TEST EXIF on TRACK Open Terminal and Type This:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1 \cf2 \cb3 \CocoaLigature0 exiftool -all -a -u -U -f -s \cf4 \cb3 "$PATH TO FILE IN QUOTES" OR ESCAPED\cf2 \cb3 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb5 \
+\cf6 Example1 Quoted:\cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb3 exiftool -all -a -u -U -f -s "/Volumes/Panko/zz Programming Transfers/AV Foundation/zzzz Audio Metadata/Traktor Frame/DJ K-Tel M4A Traktor Frame/Test Songs/Dreams.m4a"\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb5 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf7 \cb5 Example2 Automatic Escaped By Dragging From Finder:\cf2 \cb5 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb3 exiftool -all -a -u -U -f -s /Volumes/Panko/zz\\ Programming\\ Transfers/AV\\ Foundation/zzzz\\ Audio\\ Metadata/Traktor\\ Frame/DJ\\ K-Tel\\ M4A\\ Traktor\\ Frame/Test\\ Songs/Dreams.m4a\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb5 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf8 \cb9 exiftool -all -a -u -U -f -s \cf2 \cb5 							  						\cf7 \cb5 ^^^^^^ drag file from finder to here.\cf2 \cb5 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf7 \cb5 EXAMPLE OUTPUT:\cf2 \cb5 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb3 \
+ExifToolVersion                 : 12.42\
+FileName                        : Dreams.m4a\
+Directory                       : /Volumes/Panko/zz Programming Transfers/AV Foundation/zzzz Audio Metadata/Traktor Frame/DJ K-Tel M4A Traktor Frame/Test Songs\
+FileSize                        : 17 MB\
+FileModifyDate                  : 2022:10:08 09:06:26-07:00\
+FileAccessDate                  : 2022:10:23 21:35:53-07:00\
+FileInodeChangeDate             : 2022:10:23 17:38:23-07:00\
+FilePermissions                 : -rw-r--r--\
+FileType                        : M4A\
+FileTypeExtension               : m4a\
+MIMEType                        : audio/mp4\
+MajorBrand                      : Apple iTunes AAC-LC (.M4A) Audio\
+MinorVersion                    : 0.0.0\
+CompatibleBrands                : M4A , mp42, isom\
+Free                            : (Binary data 0 bytes, use -b option to extract)\
+MediaDataSize                   : 16520534\
+MediaDataOffset                 : 48\
+MediaData                       : (Binary data 16520534 bytes, use -b option to extract)\
+MovieHeaderVersion              : 0\
+CreateDate                      : 2022:06:29 02:16:33\
+ModifyDate                      : 2022:10:08 09:06:26\
+TimeScale                       : 96000\
+Duration                        : 0:04:18\
+PreferredRate                   : 1\
+PreferredVolume                 : 100.00%\
+MatrixStructure                 : 1 0 0 0 1 0 0 0 1\
+PreviewTime                     : 0 s\
+PreviewDuration                 : 0 s\
+PosterTime                      : 0 s\
+SelectionTime                   : 0 s\
+SelectionDuration               : 0 s\
+CurrentTime                     : 0 s\
+NextTrackID                     : 2\
+TrackHeaderVersion              : 0\
+TrackCreateDate                 : 2022:06:29 02:16:33\
+TrackModifyDate                 : 2022:10:08 09:06:26\
+TrackID                         : 1\
+TrackDuration                   : 0:04:18\
+TrackLayer                      : 0\
+TrackVolume                     : 100.00%\
+MatrixStructure                 : 1 0 0 0 1 0 0 0 1\
+MediaHeaderVersion              : 0\
+MediaCreateDate                 : 2022:06:29 02:16:33\
+MediaModifyDate                 : 2022:10:08 09:06:26\
+MediaTimeScale                  : 96000\
+MediaDuration                   : 0:04:18\
+MediaLanguageCode               : und\
+HandlerType                     : Audio Track\
+Balance                         : 0\
+AudioFormat                     : mp4a\
+AudioChannels                   : 2\
+AudioBitsPerSample              : 16\
+AudioSampleRate                 : 30464\
+Unknown_esds                    : (Binary data 43 bytes, use -b option to extract)\
+TimeToSampleTable               : (Binary data 16 bytes, use -b option to extract)\
+SampleToChunk                   : (Binary data 32 bytes, use -b option to extract)\
+SampleSizes                     : (Binary data 96812 bytes, use -b option to extract)\
+ChunkOffset                     : (Binary data 2116 bytes, use -b option to extract)\
+HandlerType                     : Metadata\
+HandlerVendorID                 : Apple\
+iTunSMPB                        : 0 800 202 17A15FE 0 0 0 0 0 0 0 0\
+ReplayTrackGain                 : +1.9 dB\
+ReplayTrackPeak                 : 0.519578\
+AlbumArtist                     : Fleetwood Mac\
+CoverArt                        : (Binary data 24480 bytes, use -b option to extract)\
+TVEpisodeID                     : C345D0D113847284\
+TVShow                          : CATNO LABEL\
+Encoder                         : fdkaac 0.6.3, libfdk-aac 4.0.1, CBR 512kbps\
+Composer                        : FLAC 24bit/176.4khz\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf10 \cb3 Unknown_NITR                    : (Binary data 79459 bytes, use -b option to extract)\cf2 \cb3 \
+ContentCreateDate               : 1977\
+Title                           : Dreams\
+Album                           : Rumours SACD HD\
+Artist                          : Fleetwood Mac\
+Genre                           : Rock\
+Comment                         : 176\
+TrackNumber                     : 2 of 12\
+BeatsPerMinute                  : 121\
+Publisher                       : FLAC 24bit/176.4khz\
+Label                           : FLAC 24bit/176.4khz\
+CatalogNumber                   : C345D0D113847284\
+InitialKey                      : 1d\
+Ratingwmp                       : 255\
+Free                            : (Binary data 1910 bytes, use -b option to extract)\
+AvgBitrate                      : 512 kbps\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf11 \cb12 notice the \cf13 UNKNOWN_NITR\cf11  FRAME in red, this is what we want\
+\
+Now to just extract the \cf13 UNKNOWN_NITR\cf11  FRAME type this in terminal:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb3 exiftool -Unknown_NITR -u -U -b -f -s \cf4 \cb3 "$PATH TO FILE IN QUOTES" OR ESCAPED\cf2 \cb3 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb5 \
+\cf6 Example Quoted:\cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb3 exiftool -Unknown_NITR -u -U -b -f -s "/Volumes/Panko/zz Programming Transfers/AV Foundation/zzzz Audio Metadata/Traktor Frame/DJ K-Tel M4A Traktor Frame/Test Songs/Dreams.m4a"\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb5 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf7 \cb5 EXAMPLE OUTPUT:\cf2 \cb5 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb3 6cNTKB6[dataDMRTG4RDH 0SKHC???DOMF	?NSRVATAD?3DNAAWTRAq\}\} 117/VT5AJPBHDST53A13UP2BBNPVZC1C??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf14 \cb3 ******************TRIMMED MIDDLE HERE - ARTWORK DATA****************\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \cb3 ???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????DIUA#434333#3333333C3CC333B234CC33334ED34434344D#434444D3D3333DC33ES33C33DUUDC43335DDC43##D4D33###4DC332"3C22"33"#3#2#"#2#B222232223C22"234DCC33233#33#433#33433333344344D34DC34DfSSCC223TETDC33T44333##4DED43##DDD33333D4D3322#33C22222DDCCC22DC23DC34D3!RTIB?]QMPB??RLOCMMOC\
+176GLTC$C345D0D113847284PEUC?n.n.t?p????@????\
+                                             Beat Marker?V????@????n.n.?V????@\
+dv?@????SGLFMPBH\uc0\u282 ?BTDPI?LBAL*FLAC 24bit/176.4khzYEKMBDCPABDKP??@KNAR?TDLR?CNYSYTAMBLAT"Rumours SACD HDNOCT\
+                                                                                                          Rock2TITDreamsNELTOMNT\
+Fleetwood MacKCRT3NRT?;????W???8
+\f2 \uc0\u406 
+\f1 ?;?a??b?1???3B@?B??C?i?`
+\f3 \uc0\u1491 
+\f1 ???>'??B?m????2??3C??5?????`@?@??'??|?B@?@j?I??0
+\f2 @\uc0\u807 
+\f1 ?=?                  1EPT\
+?B?B?\
+@dt2??C?p@GAH??'2@??:=??B ?=@\
+
+\f4 \uc0\u1955 
+\f1 =;r!B?)@?o?>??B?t@?sL? @    ?6???C`?3@?|(??8@W??=?3?B?<*@???>??C? @R?%???I=???B,'@???>
+\f5 \uc0\u892 
+\f1 ?B p ??K?@y'@\
+                         
+\f4 \uc0\u1952 
+\f1 =?W?B`
+\f6 \uc0\u1353 
+\f1  W???C@!@l%?<?[B?5?!@?+? S"@?>=@BCB?
+\f3 \uc0\u1475 
+\f1 "@?g??-(C`??#@???\uc0\u262 $@\u1051 \
+?t?	C ??$@y>?:`?%@??(?`?=v&?>??C?Q|&@U??
+\f3 \uc0\u1447 
+\f1 	C?5x'@0?=?E?'@?
+\f7 \uc0\u1686 
+\f1 =\}??B?t(@??@?C?h?(@??;? \cf15 ******************TRIMMED TO END FROM HERE - UNKNOWN DATA (TRANSIENTS?) ***************\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf15 \cb5 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf11 So by using EXIF TOOL I can get the raw data and pass it to the old PERL Script with some modifications.\
+\
+In the modified script I get the $DATA via: where $ARGV[0] is the file path\
+\pard\tx494\pardeftab494\pardirnatural\partightenfactor0
+
+\f8\b \cf16 \cb17 \CocoaLigature1 my
+\f9\b0 \cf18  $data = \cf19 `/usr/local/bin/exiftool -Unknown_NITR -u -U -b -f -s "$ARGV[0]"`\cf18 ;
+\f1 \cf11 \cb5 \CocoaLigature0 \
+}
