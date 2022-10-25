@@ -1,9 +1,7 @@
 # DJ K-Tel M4A Traktor Frame
-
 **Decoding the Traktor Private NITR Frame on M4A Files**
 
 ## TABLE OF CONTENTS
-
 1. [Traktor Private Frame Info](#privateFrameInfo )
 2. [Reading the Traktor Frame](#readFrame )
 3. [EXIF Tool](#exifTool)
@@ -34,8 +32,9 @@ I have been exploring with all of the Tag Readers/Writers that I can. My choice 
 I noticed that Kid3 (with the right settings) was recognizing the TRAKTOR4 Private frame on mp3 files. But my current workflow is using straight M4A files at 512kbs / 96kHz converted from FLAC 24Bit/44.1-192kHz Files.
  I was still not able to find any TRAKTOR4 or NITR frames on M4A files via any programs until I tried out EXIF Tool.
 
-EXIF Tool
----------
+
+
+<h2 id="exifTool">EXIF Tool</h2>
 
 Running EXIF Tool forcing it so scan all frames and include unknown frames, revealed the Unknown\_NITR
 
@@ -67,26 +66,27 @@ Fleetwood MacKCRT3NRT?;????W???8Ɩ?;?a??b?1???3B@?B??C?i?`ד???>'??B?m????2??3C?
 ?t?	C ??$@y>?:`?%@??(?`?=v&?>??C?Q|&@U??֧	C?5x'@0?=?E?'@?ږ=}??B?t(@??@?C?h?(@??;? ******************TRIMMED TO END FROM HERE - UNKNOWN DATA (TRANSIENTS?) ***************
 ```
 
-MODIFY SCRIPT
--------------
+<h2 id="scriptMod">MODIFY SCRIPT</h2>
 
 I then modified the orignal Perl Script to get the data via EXIF Tool rather than mp3Tag and then process the data. I had to make a few small other adjustments.
 
 ## PACKAGE SCRIPT
+
 I then packaged the Perl Script into a Mac App using 
 **Platypus** https://sveinbjorn.org/platypus
 
 <h2 id="require">REQUIREMENTS</h2>
 
-- Mac OSX 10.11 or Later
-- Traktor m4a files (Test files included)
-- EXIF Tool
-    - INSTALL FROM HERE : https://exiftool.org
-    - Direct Mac Download Here: https://exiftool.org/ExifTool-12.49.dmg
-    - See Also info on testing EXIF in Installation and Instructions Folder
+* Mac OSX 10.11 or Later
+* Traktor Files (Test files included)
+* EXIF Tool
+  - INSTALL FROM HERE : https://exiftool.org
+  - Direct Mac Download Here: https://exiftool.org/ExifTool-12.49.dmg
+  - See Also info on testing EXIF in Installation and Instructions Folder
 
-INSTALLATION
-------------
+
+
+<h2 id="install">INSTALLATION</h2>
 
 * Copy or Move the Whole Folder to anywhere
 * Download Release from here: <https://github.com/technomorph/DJ-K-Tel-M4A-Traktor-Frame/releases>
