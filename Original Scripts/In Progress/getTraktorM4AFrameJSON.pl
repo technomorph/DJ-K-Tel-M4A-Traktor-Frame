@@ -78,6 +78,7 @@ sub decode{
 	}
 	
 	
+	
 	if($children == 0){	#this is data item, not a container
 		#print "=================== NO CHILDREN";
 		#interpret value if possible
