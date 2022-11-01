@@ -17,6 +17,7 @@ use strict;
 #use MP3::Tag;
 use Getopt::Std;
 use Data::Dumper qw(Dumper);
+use JSON::MaybeXS;
 
 my %opts = ();
 getopts("nro", \%opts);
@@ -24,6 +25,8 @@ getopts("nro", \%opts);
 my %traktorMetaDict;
 my %headerDict;
 my %dataDict;
+my %syncDict;
+my %chkSumDict;
 my %currentDict;
 my $parentID = '';
 
@@ -64,23 +67,10 @@ sub decode{
 	$offset += 12; #length of my header.. data or another container follows
 	my $pcdl = 0;  #previous child data length
 	
-	print "===== depth is $depth\n";
-	#indentation?
-	if(! defined($opts{n})){
-		print "\t" x $depth;
-	}
-	#names backwards?
 	my $frameID = reverse $frameDI;
-	if(defined($opts{o})){
-		print "$frameDI:";
-	}else{
-		print "$frameID:";
-	}
-	
-	
+
 	
 	if($children == 0){	#this is data item, not a container
-		#print "=================== NO CHILDREN";
 		#interpret value if possible
 		if(defined $opts{r}){
 			my $l2 = $len * 2;
@@ -158,10 +148,6 @@ sub decode{
 					#$currentValue .= "\n";
 					my %currentCueDict;
 					#indentation
-					print "=================== NEW CUE POINTS LIST depth is ($depth + 1)";
-					if(! defined($opts{n})){
-						$currentValue .= "\t" x ($depth + 1);
-					}
 					
 					my $cueNumber = "CUE$i";
 					$currentCueDict{"Number"} = $i;
@@ -181,7 +167,7 @@ sub decode{
 						my $namestrlen = 4 + $namelen * 2;
 						my $cueName = t_string(unpack("x$cueoff a$namestrlen", $data));
 						$currentCueDict{"Name"} = $cueName;
-						#$currentValue .= ", ";
+						
 						#add to the offset: namestring length
 						$cueoff += $namestrlen;
 						
@@ -285,18 +271,10 @@ sub decode{
 			}
 
 			if($currentValue ne ""){
-				print "$currentValue";
-			}else{
-				#print raw, truncate to 60 characters..
-				my $l2 = $len * 2;
-				if($l2 > 60){
-					$l2 = 60;
-				}
-				my $value = unpack("x$offset H$l2", $data);
-				print " 0x$value";
+				##print " 0x$value";
 				$currentValue .= $value;
 				if($len > 30) {
-					print "...";
+					#print "...";
 					$currentValue .= "...";
 				}
 			}
@@ -310,8 +288,7 @@ sub decode{
 			}
 		}
 	}
-	print "\n";
-	#print "=================== END SUB DECODE AFTER NEW LINE \n";
+	#print "\n";
 	
 	#if this is not a data node (ie children > 0)
 	#iterate through all children and descend recursively
@@ -324,7 +301,6 @@ sub decode{
 		$parentID = "DATA";
 	}
 	for(my $i = 0; $i < $children; $i++){
-		#print "======child:$i ofTotal:$children";
 		$pcdl += 12 + decode($depth + 1, $offset + $pcdl, $data);
 	}
 	
@@ -339,13 +315,11 @@ if(! -f $ARGV[0]){
 	exit(1);
 }
 
-#my $mp3 = MP3::Tag->new($ARGV[0]);
-#my $data = `exiftool -Unknown_NITR -u -U -b -f -s "/Volumes/Tekno/Users/kerry/Music/iTunes/iTunes Media/Music/Musical Youth/The Youth of Today/Pass The Dutchie (Special Dub Mix).m4a"`;
+
 
 #my $data = `exiftool -Unknown_NITR -u -U -b -f -s "/Volumes/Panko/zz Programming Transfers/AV Foundation/zzzz Audio Metadata/Traktor Frame/Traktor Frame OLD/Dreams.m4a"`;
 
-#
-print "Parsing File: $ARGV[0]\n\n";
+# print "Parsing File: $ARGV[0]\n\n";
 
 
 my $data = `/usr/local/bin/exiftool -Unknown_NITR -u -U -b -f -s "$ARGV[0]"`;
@@ -374,7 +348,7 @@ if(! $found){
 
 
 
-print "DONE\n";
+#print "DONE\n";
 
 
 
