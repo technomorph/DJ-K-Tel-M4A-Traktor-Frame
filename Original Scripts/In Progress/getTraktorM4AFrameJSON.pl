@@ -159,6 +159,9 @@ sub decode{
 			#$currentValue = unpack("x$offset H$len2", $data);
 #			print "Audio ID value is:$currentValue\n";
 #			$currentValue = decode("utf8", $currentValue);
+#			my $rawID = unpack("x$offset A$len", $data);
+#			print "Audio ID rawID is " . $rawID . "\n\n";
+#			$currentValue = t_string($rawID);
 			$currentValue = t_string(unpack("x$offset a$len", $data));
 		}elsif($frameID eq "TIT1"){
 			#grouping
