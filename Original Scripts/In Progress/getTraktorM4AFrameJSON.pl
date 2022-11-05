@@ -16,7 +16,9 @@
 use strict;
 use Getopt::Std;
 use Data::Dumper qw(Dumper);
-use Scalar::Util qw(reftype);
+use MIME::Base64;
+use Encode;
+#use Scalar::Util qw(reftype);
 #use JSON::MaybeXS;
 
 $Data::Dumper::Terse = 1;
@@ -74,7 +76,7 @@ sub t_string{	# "traktor string" decoder
 	return pack('(A)*', unpack("x4 (Ax)*", $data));
 }
 
-sub decode{
+sub parse{
 	my ($depth, $offset, $data) = @_;
 	my ($frameDI, $len, $children, $rest) = unpack("x$offset A4 V V", $data);
 	
@@ -153,16 +155,6 @@ sub decode{
 			my $sec = $currentValue % 60;
 			$sec = "0$sec" if $sec < 10;
 			$currentValue = int($currentValue/60) . ":" . $sec;
-		}elsif($frameID eq "AUID"){
-			#audioID
-			#my $len2 = $len * 2;
-			#$currentValue = unpack("x$offset H$len2", $data);
-#			print "Audio ID value is:$currentValue\n";
-#			$currentValue = decode("utf8", $currentValue);
-#			my $rawID = unpack("x$offset A$len", $data);
-#			print "Audio ID rawID is " . $rawID . "\n\n";
-#			$currentValue = t_string($rawID);
-			$currentValue = t_string(unpack("x$offset a$len", $data));
 		}elsif($frameID eq "TIT1"){
 			#grouping
 			$currentValue = t_string(unpack("x$offset a$len", $data));
@@ -220,6 +212,35 @@ sub decode{
 		}elsif($frameID eq "LMDT"){
 			#lock modified date and time
 			$currentValue = t_string(unpack("x$offset a$len", $data));
+		}elsif($frameID eq "TRN3"){
+			#unknown TRN3
+			my $hexLength = $len * 2;
+			
+			my $rawHex = unpack("x$offset H$hexLength", $data);
+			my $encodedHex = pack("H*",$rawHex);
+			my $rawValue = unpack("u", $encodedHex);
+#			print "-------------------------------------------------- TRN3 rawHex \n";
+#			print Dumper $rawHex;
+#			print "\n------------------------------------------------- \n";
+#			print "-------------------------------------------------- TRN3 encodedHex \n";
+#			print Dumper $encodedHex;
+#			print "\n------------------------------------------------- \n";
+#			print "-------------------------------------------------- TRN3 rawValue \n";
+#			print Dumper $rawValue;
+#			print "\n------------------------------------------------- \n";
+			$currentValue = t_string(unpack("x$offset A$len", $data));
+		}elsif($frameID eq "AUID"){
+			#audioID
+			#my $len2 = $len * 2;
+			my $stringLength = $len - 4;
+			my $hexLength = $stringLength * 2;
+			
+			my $rawHex = unpack("x$offset x4 H$hexLength", $data);
+			my $encodedHex = pack("H*",$rawHex);
+			my $encodeString = encode_base64($encodedHex,"=");
+			
+			$currentValue = $encodeString;
+			# $currentValue = t_string(unpack("x$offset x4 H$hexLength", $data));
 		}elsif($frameID eq "CUEP"){
 			#cue points..
 			#number of cue points
@@ -322,7 +343,7 @@ sub decode{
 		}
 		
 		for(my $i = 0; $i < $children; $i++){
-			$pcdl += 12 + decode($depth + 1, $offset + $pcdl, $data);
+			$pcdl += 12 + parse($depth + 1, $offset + $pcdl, $data);
 		}
 		
 		if($parentID eq "SYNC"){
@@ -367,7 +388,7 @@ my $data = `/usr/local/bin/exiftool -Unknown_NITR -u -U -b -f -s "$ARGV[0]"`;
 my $found = 0;
 if($data){
 	
-	decode(0, 16, $data);
+	parse(0, 16, $data);
 	my $rest = $data;
 	$found = 1;
 	
